@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitEx Global - Instant Cryptocurrency Exchange</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <img src="logo.jpeg" alt="BitEx Global" class="logo-img">
+                <div class="logo-text">
+                    <h1>BitEx Global</h1>
+                    <span class="tagline">Instant Crypto Exchange</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav desktop-nav">
+                <a href="#swap">Exchange</a>
+                <a href="#track">Track Order</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#swap" class="mobile-nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+                </svg>
+                <span>Exchange</span>
+            </a>
+            <a href="#track" class="mobile-nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Track Order</span>
+            </a>
+            <a href="#faq" class="mobile-nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>FAQ</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Exchange Crypto in 3 Simple Steps</h2>
+                <p class="hero-subtitle">Fast, secure, and anonymous cryptocurrency swaps</p>
+            </div>
+        </section>
+
+        <!-- Swap Section -->
+        <section id="swap" class="swap-section">
+            <div class="container">
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Select Coins</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Enter Details</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Make Deposit</div>
+                    </div>
+                </div>
+
+                <div class="swap-card">
+                    <!-- Step 1: Select Coins -->
+                    <div class="swap-step" id="step1" style="display: block;">
+                        <h3 class="step-title">Select Coins to Exchange</h3>
+                        
+                        <div class="coin-selection">
+                            <div class="input-group">
+                                <label>You Send</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="sendAmount" placeholder="0.00" min="0" step="any">
+                                    <button class="currency-select" id="sendCurrencyBtn" type="button">
+                                        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" id="sendCurrencyIcon" class="currency-icon">
+                                        <span id="sendCurrencyName">BTC</span>
+                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor">
+                                            <path d="M1 1l5 5 5-5"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="input-meta">
+                                    <span id="sendUsdValue">≈ $0.00</span>
+                                </div>
+                            </div>
+
+                            <div class="swap-icon">
+                                <button class="swap-direction-btn" id="swapDirectionBtn" type="button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="input-group">
+                                <label>You Receive (estimated)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="receiveAmount" placeholder="0.00" readonly>
+                                    <button class="currency-select" id="receiveCurrencyBtn" type="button">
+                                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" id="receiveCurrencyIcon" class="currency-icon">
+                                        <span id="receiveCurrencyName">ETH</span>
+                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="currentColor">
+                                            <path d="M1 1l5 5 5-5"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="input-meta">
+                                    <span id="receiveUsdValue">≈ $0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exchange-info">
+                            <div class="info-row">
+                                <span>Exchange Rate</span>
+                                <strong id="exchangeRate">--</strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Network Fee (2%)</span>
+                                <strong id="networkFee">--</strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Estimated Arrival</span>
+                                <strong>5-30 minutes</strong>
+                            </div>
+                        </div>
+
+                        <div id="minAmountWarning" class="warning-box" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
+                            </svg>
+                            <span>Minimum swap amount is $50</span>
+                        </div>
+
+                        <button class="btn-primary" id="continueToStep2" disabled>Continue</button>
+                    </div>
+
+                    <!-- Step 2: Enter Details -->
+                    <div class="swap-step" id="step2" style="display: none;">
+                        <h3 class="step-title">Enter Your Details</h3>
+                        
+                        <div class="details-form">
+                            <div class="input-group">
+                                <label>Recipient Wallet Address *</label>
+                                <input type="text" id="recipientAddress" placeholder="Enter your wallet address to receive funds" class="form-input">
+                                <small class="input-hint">Make sure this address supports <span id="receiveCurrencyHint">ETH</span></small>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Email Address (Optional)</label>
+                                <input type="email" id="userEmail" placeholder="Get notifications about your swap" class="form-input">
+                                <small class="input-hint">We'll notify you about swap progress</small>
+                            </div>
+
+                            <div class="swap-summary">
+                                <h4>Swap Summary</h4>
+                                <div class="summary-row">
+                                    <span>You Send</span>
+                                    <strong id="summaryYouSend">--</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>You Receive</span>
+                                    <strong id="summaryYouReceive">--</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Recipient Address</span>
+                                    <strong id="summaryRecipient" class="address-text">--</strong>
+                                </div>
+                            </div>
+
+                            <div class="terms-check">
+                                <input type="checkbox" id="termsAgree">
+                                <label for="termsAgree">I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a></label>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-secondary" id="backToStep1">Back</button>
+                            <button class="btn-primary" id="continueToStep3" disabled>Create Exchange</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Make Deposit -->
+                    <div class="swap-step" id="step3" style="display: none;">
+                        <div class="success-icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <circle cx="40" cy="40" r="38" stroke="url(#gradient2)" stroke-width="4"/>
+                                <path d="M25 40L35 50L55 30" stroke="url(#gradient2)" stroke-width="4" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="gradient2" x1="0" y1="0" x2="80" y2="80">
+                                        <stop offset="0%" stop-color="#667eea"/>
+                                        <stop offset="100%" stop-color="#764ba2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <h3 class="step-title">Exchange Created Successfully!</h3>
+                        <p class="step-subtitle">Send your crypto to the address below</p>
+
+                        <div class="deposit-details">
+                            <div class="detail-card">
+                                <label>Exchange ID</label>
+                                <div class="copy-field">
+                                    <code id="swapId">--</code>
+                                    <button class="copy-btn" onclick="copyToClipboard('swapId')">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path d="M4 2h8v2H4V2zm8 4H4v8h8V6zM2 0v12h12V0H2z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="detail-card highlight">
+                                <label>Deposit Address</label>
+                                <div class="copy-field">
+                                    <code id="depositAddress">--</code>
+                                    <button class="copy-btn" onclick="copyToClipboard('depositAddress')">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path d="M4 2h8v2H4V2zm8 4H4v8h8V6zM2 0v12h12V0H2z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="detail-card">
+                                <label>Amount to Send</label>
+                                <div class="copy-field">
+                                    <code id="amountToSend">--</code>
+                                    <button class="copy-btn" onclick="copyToClipboard('amountToSend')">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path d="M4 2h8v2H4V2zm8 4H4v8h8V6zM2 0v12h12V0H2z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="detail-card">
+                                <label>You Will Receive</label>
+                                <div class="amount-display">
+                                    <strong id="willReceive">--</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert-info">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
+                            </svg>
+                            <div>
+                                <strong>Important:</strong>
+                                <p>Send exactly the specified amount to the deposit address. After sending, our team will verify your deposit and process your exchange within 5-30 minutes.</p>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-secondary" onclick="window.location.href='#track'">Track Exchange</button>
+                            <button class="btn-primary" onclick="location.reload()">New Exchange</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track Exchange Section -->
+        <section id="track" class="track-section">
+            <div class="container">
+                <div class="track-card">
+                    <h2>Track Your Exchange</h2>
+                    <p>Enter your exchange ID to check the status</p>
+                    <div class="track-form">
+                        <input type="text" id="trackSwapId" placeholder="Enter Exchange ID" class="form-input">
+                        <button class="btn-primary" id="trackBtn">Track</button>
+                    </div>
+                    <div id="trackResult"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How long does an exchange take?</h3>
+                        <p>Most exchanges are completed within 5-30 minutes after we receive your deposit.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the minimum exchange amount?</h3>
+                        <p>The minimum exchange amount is $50 USD equivalent in any supported cryptocurrency.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need to create an account?</h3>
+                        <p>No! BitEx Global is completely anonymous. You only need to provide your receiving wallet address.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What fees do you charge?</h3>
+                        <p>We charge a 2% network fee on all exchanges to cover blockchain transaction costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BitEx Global</h4>
+                    <p>Fast, secure, and anonymous cryptocurrency exchange platform.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#swap">Exchange</a>
+                    <a href="#track">Track Order</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#aml">AML Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mailto:support@bitexglobal.com">support@bitexglobal.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BitEx Global. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Currency Selection Modal -->
+    <div class="modal" id="currencyModal" style="display: none;">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content currency-modal">
+            <div class="modal-header">
+                <h3>Select Currency</h3>
+                <button class="modal-close" id="closeCurrencyModal" type="button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="currencySearch" placeholder="Search currency..." class="form-input search-input">
+                <div class="currency-list" id="currencyList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

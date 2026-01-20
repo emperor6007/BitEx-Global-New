@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BitEx Global</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="logo.jpeg" alt="BitEx Global" class="login-logo">
+                <h1>BitEx Global</h1>
+                <p>Admin Dashboard</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="adminUsername" class="form-input" placeholder="Enter username" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="adminPassword" class="form-input" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <div id="loginError" class="login-error" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" style="display: none;">
+        <div class="admin-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <img src="logo.jpeg" alt="BitEx Global" class="sidebar-logo">
+                    <h2>BitEx Admin</h2>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-view="dashboard">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/>
+                            <path d="M3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6z"/>
+                            <path d="M14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="#" class="nav-item" data-view="exchanges">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+                        </svg>
+                        Exchanges
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <button class="btn-logout" id="logoutBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M3 0a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V2a2 2 0 00-2-2H3zm6 8a1 1 0 011 1v3a1 1 0 01-2 0V9a1 1 0 011-1z"/>
+                        </svg>
+                        Logout
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="admin-main">
+                <header class="admin-header">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <div class="header-actions">
+                        <span class="timestamp">Last updated: <strong id="lastUpdated">--</strong></span>
+                        <button class="btn-icon" id="refreshBtn" title="Refresh">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="admin-content">
+                    <!-- Dashboard View -->
+                    <div id="dashboardView" class="view active">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Total Exchanges</h3>
+                                    <p class="stat-value" id="totalExchanges">0</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon orange">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Pending</h3>
+                                    <p class="stat-value" id="pendingExchanges">0</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Completed</h3>
+                                    <p class="stat-value" id="completedExchanges">0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2>Recent Exchanges</h2>
+                            </div>
+                            <div id="recentExchangesTable"></div>
+                        </div>
+                    </div>
+
+                    <!-- Exchanges View -->
+                    <div id="exchangesView" class="view">
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2>All Exchanges</h2>
+                                <div class="filter-controls">
+                                    <select id="statusFilter" class="filter-select">
+                                        <option value="">All Statuses</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="deposited">Deposited</option>
+                                        <option value="processing">Processing</option>
+                                        <option value="completed">Completed</option>
+                                        <option value="failed">Failed</option>
+                                    </select>
+                                    <input type="text" id="searchExchange" placeholder="Search by ID..." class="form-input" style="max-width: 250px;">
+                                </div>
+                            </div>
+                            <div id="allExchangesTable"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Edit Exchange Modal -->
+    <div class="modal" id="editModal" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Edit Exchange</h3>
+                <button class="modal-close" id="closeEditModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="editExchangeContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="config.js"></script>
+    <script src="admin-app.js"></script>
+</body>
+</html>
