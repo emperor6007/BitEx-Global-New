@@ -1,4 +1,4 @@
-/* Modern BitEx Global Styles */
+/* Modern BitEx Global Styles - Updated for Mobile Visibility */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -33,7 +33,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Animated Background */
 body::before {
     content: '';
     position: fixed;
@@ -57,7 +56,6 @@ body::before {
     padding: 0 20px;
 }
 
-/* Header */
 .header {
     background: rgba(21, 25, 52, 0.95);
     backdrop-filter: blur(20px);
@@ -111,7 +109,6 @@ body::before {
     margin-top: -5px;
 }
 
-/* Desktop Navigation */
 .desktop-nav {
     display: flex;
     gap: 2.5rem;
@@ -146,7 +143,6 @@ body::before {
     width: 100%;
 }
 
-/* Hamburger Menu - Base Styles */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -179,7 +175,6 @@ body::before {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Mobile Navigation - Base Styles */
 .mobile-nav {
     display: none;
     position: fixed;
@@ -229,7 +224,6 @@ body::before {
     stroke-width: 2;
 }
 
-/* Hero Section */
 .hero {
     padding: 4rem 0 2rem;
     text-align: center;
@@ -252,7 +246,6 @@ body::before {
     margin: 0 auto;
 }
 
-/* Progress Steps */
 .progress-steps {
     display: flex;
     justify-content: center;
@@ -318,7 +311,6 @@ body::before {
     background: var(--gradient);
 }
 
-/* Swap Card */
 .swap-card {
     background: var(--bg-secondary);
     border-radius: 24px;
@@ -343,7 +335,6 @@ body::before {
     font-size: 1rem;
 }
 
-/* Coin Selection */
 .coin-selection {
     display: flex;
     flex-direction: column;
@@ -376,7 +367,6 @@ body::before {
     transform: rotate(180deg);
 }
 
-/* Input Groups */
 .input-group {
     margin-bottom: 1.5rem;
 }
@@ -476,7 +466,6 @@ body::before {
     padding: 0 0.25rem;
 }
 
-/* Exchange Info */
 .exchange-info {
     background: var(--bg-tertiary);
     border-radius: 16px;
@@ -505,7 +494,6 @@ body::before {
     font-weight: 600;
 }
 
-/* Form Inputs */
 .form-input {
     width: 100%;
     background: var(--bg-tertiary);
@@ -531,7 +519,6 @@ body::before {
     color: var(--text-muted);
 }
 
-/* Swap Summary */
 .swap-summary {
     background: var(--bg-primary);
     border-radius: 16px;
@@ -567,7 +554,6 @@ body::before {
     text-align: right;
 }
 
-/* Terms Checkbox */
 .terms-check {
     display: flex;
     align-items: flex-start;
@@ -597,7 +583,6 @@ body::before {
     text-decoration: underline;
 }
 
-/* Buttons */
 .btn-primary {
     width: 100%;
     background: var(--gradient);
@@ -653,7 +638,6 @@ body::before {
     flex: 2;
 }
 
-/* Warning Box */
 .warning-box {
     display: flex;
     align-items: center;
@@ -667,14 +651,12 @@ body::before {
     font-size: 0.875rem;
 }
 
-/* Success Icon */
 .success-icon {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
 }
 
-/* Deposit Details */
 .deposit-details {
     display: flex;
     flex-direction: column;
@@ -743,7 +725,6 @@ body::before {
     background-clip: text;
 }
 
-/* Alert Info */
 .alert-info {
     display: flex;
     gap: 1rem;
@@ -767,7 +748,6 @@ body::before {
     margin-bottom: 0.25rem;
 }
 
-/* Track Section */
 .track-section, .faq-section {
     padding: 4rem 0;
 }
@@ -810,7 +790,6 @@ body::before {
     margin-top: 2rem;
 }
 
-/* FAQ Section */
 .faq-section h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -850,7 +829,6 @@ body::before {
     line-height: 1.6;
 }
 
-/* Footer */
 .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border);
@@ -897,7 +875,6 @@ body::before {
     font-size: 0.875rem;
 }
 
-/* Modal */
 .modal {
     position: fixed;
     inset: 0;
@@ -976,7 +953,6 @@ body::before {
     padding: 2rem;
 }
 
-/* Currency List */
 .currency-list {
     max-height: 400px;
     overflow-y: auto;
@@ -1027,7 +1003,6 @@ body::before {
     color: var(--text-muted);
 }
 
-/* Toast Notifications */
 .toast-container {
     position: fixed;
     top: 2rem;
@@ -1071,12 +1046,8 @@ body::before {
     }
 }
 
-/* ========================================
-   RESPONSIVE DESIGN - MOBILE STYLES
-   ======================================== */
-
+/* MOBILE RESPONSIVE STYLES */
 @media (max-width: 768px) {
-    /* Hide desktop nav, show hamburger and mobile nav */
     .desktop-nav {
         display: none !important;
     }
@@ -1089,7 +1060,6 @@ body::before {
         display: block !important;
     }
     
-    /* Logo adjustments */
     .logo-img {
         width: 40px;
         height: 40px;
@@ -1103,7 +1073,6 @@ body::before {
         font-size: 0.65rem;
     }
     
-    /* Hero section */
     .hero {
         padding: 2.5rem 0 1.5rem;
     }
@@ -1118,7 +1087,6 @@ body::before {
         padding: 0 1rem;
     }
 
-    /* Progress steps */
     .progress-steps {
         padding: 0 0.5rem;
         margin: 2rem 0 1.5rem;
@@ -1139,7 +1107,6 @@ body::before {
         margin: 0 0.5rem;
     }
 
-    /* Swap card */
     .swap-card {
         padding: 1.5rem;
         border-radius: 16px;
@@ -1149,15 +1116,24 @@ body::before {
         font-size: 1.5rem;
     }
 
-    /* Input fields */
+    /* CRITICAL FIX: Stack input fields vertically on mobile */
+    .input-wrapper {
+        flex-direction: column;
+    }
+
     .input-wrapper input {
         font-size: 1.25rem;
         padding: 1rem;
+        border-bottom: 2px solid var(--border);
     }
 
     .currency-select {
-        min-width: 120px;
-        padding: 0.75rem 1rem;
+        width: 100%;
+        min-width: unset;
+        padding: 1rem;
+        border-left: none;
+        border-top: 2px solid var(--border);
+        justify-content: space-between;
     }
 
     .currency-select span {
@@ -1169,7 +1145,6 @@ body::before {
         height: 28px;
     }
 
-    /* Exchange info */
     .exchange-info {
         padding: 1.25rem;
     }
@@ -1179,7 +1154,6 @@ body::before {
         flex-wrap: wrap;
     }
 
-    /* Modal adjustments */
     .modal-header {
         padding: 1.5rem;
     }
@@ -1196,7 +1170,6 @@ body::before {
         max-height: 350px;
     }
 
-    /* Track section */
     .track-card {
         padding: 2rem 1.5rem;
     }
@@ -1213,7 +1186,6 @@ body::before {
         width: 100%;
     }
 
-    /* FAQ section */
     .faq-section h2 {
         font-size: 2rem;
     }
@@ -1222,7 +1194,6 @@ body::before {
         grid-template-columns: 1fr;
     }
 
-    /* Button group */
     .button-group {
         flex-direction: column;
     }
@@ -1232,12 +1203,10 @@ body::before {
         flex: 1;
     }
 
-    /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
     }
 
-    /* Toast notifications */
     .toast-container {
         right: 1rem;
         left: 1rem;
@@ -1248,7 +1217,6 @@ body::before {
         min-width: auto;
     }
 
-    /* Detail cards */
     .copy-field code {
         font-size: 0.85rem;
     }
@@ -1258,7 +1226,6 @@ body::before {
     }
 }
 
-/* Extra small mobile devices */
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
