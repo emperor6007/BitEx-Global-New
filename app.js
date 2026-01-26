@@ -186,7 +186,7 @@ const App = {
         // Calculate USD values
         const sendUsdValue = this.sendAmount * sendPrice;
         
-        // Apply 2% network fee
+        // Apply 0.5% network fee
         const feePercent = CONFIG.NETWORK_FEE_PERCENT / 100;
         const amountAfterFee = sendUsdValue * (1 - feePercent);
         
