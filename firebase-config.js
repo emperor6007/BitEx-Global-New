@@ -74,11 +74,12 @@ const DEPOSIT_ADDRESS = {
 const COINGECKO_API = 'https://api.coingecko.com/api/v3';
 
 // Minimum swap amount in USD
-const MIN_SWAP_USD = 50;
+const MIN_SWAP_USD = 10;
 
 // Export for global access
 window.FirebaseDB = { db, Collections };
 window.EMAIL_CONFIG = EMAILJS_CONFIG;
 window.DEPOSIT_ADDRESS = DEPOSIT_ADDRESS;
 window.COINGECKO_API = COINGECKO_API;
+
 window.MIN_SWAP_USD = MIN_SWAP_USD;
