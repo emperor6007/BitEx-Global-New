@@ -46,6 +46,7 @@ const CONFIG = {
     // Price update interval (30 seconds)
     PRICE_UPDATE_INTERVAL: 30000,
     
-    // Network fee (2% of transaction)
-    NETWORK_FEE_PERCENT: 2
+    // Network fee (0.5% of transaction)
+    NETWORK_FEE_PERCENT: 0.5
+
 };
